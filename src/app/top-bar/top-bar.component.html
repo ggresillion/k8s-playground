@@ -1,0 +1,20 @@
+<header class="header-6">
+  <div class="branding">
+    K8s Playground
+  </div>
+  <div class="header-nav">
+    <a href="javascript://" class="active nav-link nav-text">Dashboard</a>
+    <a href="javascript://" class="nav-link nav-text">Interactive Analytics</a>
+  </div>
+<!--  <input type="file" #config style="display: none;" (change)="loadConfig($event)">-->
+  <div class="header-actions">
+<!--    <button class="btn" (click)="config.click()">Load config</button>-->
+    <div>
+      {{config.getCurrentCluster().name}}
+      {{config.getCurrentUser().name}}
+    </div>
+    <a href="javascript://" class="nav-link nav-icon">
+      <clr-icon shape="cog"></clr-icon>
+    </a>
+  </div>
+</header>

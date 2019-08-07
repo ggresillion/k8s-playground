@@ -1,0 +1,25 @@
+<nav class="sidenav">
+  <section class="sidenav-content">
+    <div class="namespace">
+      <label>Namespace : </label>
+      <clr-dropdown>
+        <button type="button" class="btn btn-outline-primary" clrDropdownTrigger>
+          Default
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen>
+          <button type="button" clrDropdownItem>Action 1</button>
+          <button type="button" clrDropdownItem>Action 1</button>
+          <button type="button" clrDropdownItem>Action 1</button>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+    <section class="nav-group collapsible">
+      <input id="tabexample1" type="checkbox">
+      <label for="tabexample1">Deployments</label>
+      <ul *ngIf="deployments" class="nav-list">
+        <li *ngFor="let deployment of deployments.items"><a class="nav-link">{{deployment.metadata.name}}</a></li>
+      </ul>
+    </section>
+  </section>
+</nav>

@@ -1,0 +1,14 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+app-file-browser {
+  width: 20%;
+  margin-right: -13px;
+}
+
+monaco-editor {
+  display: block;
+  width: 100%;
+}

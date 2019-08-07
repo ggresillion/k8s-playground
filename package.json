@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "electron": "electron main.js",
+    "electron:build": "ng build --prod && electron main.js"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +21,16 @@
     "@angular/platform-browser": "~8.1.1",
     "@angular/platform-browser-dynamic": "~8.1.1",
     "@angular/router": "~8.1.1",
+    "@clr/angular": "^2.1.0",
+    "@clr/icons": "2.1.0",
+    "@clr/ui": "2.1.0",
+    "@kubernetes/client-node": "^0.10.2",
+    "@materia-ui/ngx-monaco-editor": "^2.0.6",
+    "@types/electron": "^1.6.10",
+    "@webcomponents/custom-elements": "^1.0.0",
+    "electron": "^6.0.1",
+    "kubernetes-client": "^8.3.3",
+    "ngx-electron": "^2.1.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -28,9 +40,9 @@
     "@angular/cli": "~8.1.1",
     "@angular/compiler-cli": "~8.1.1",
     "@angular/language-service": "~8.1.1",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -43,5 +55,19 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
+  },
+  "browser": {
+    "http": false,
+    "https": false,
+    "path": false,
+    "stream": false,
+    "tls": false,
+    "net": false,
+    "os": false,
+    "fs": false,
+    "vm": false,
+    "zlib": false,
+    "child_process": false,
+    "crypto": false
   }
 }
