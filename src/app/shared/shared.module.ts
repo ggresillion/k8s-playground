@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ClarityModule, ClrIconModule} from '@clr/angular';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -12,6 +13,8 @@ import {ClarityModule, ClrIconModule} from '@clr/angular';
     CommonModule,
     ClarityModule,
     ClrIconModule,
+    FormsModule,
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

@@ -15,6 +15,8 @@ export class KubernetesService {
   constructor(private electronService: ElectronService) {
     const win = (this.electronService.remote.getCurrentWindow() as any);
     if (this.electronService.isElectronApp) {
+      this.coreV1Api = win.coreV1Api;
+      this.appsV1Api = win.appsV1Api;
       this.coreV1ApiSubject.next(win.coreV1Api);
       this.appsV1ApiSubject.next(win.appsV1Api);
       this.config = win.config;
@@ -37,5 +39,9 @@ export class KubernetesService {
 
   getConfig() {
     return this.config;
+  }
+
+  validate(yaml: string) {
+    return (this.electronService.remote.getCurrentWindow() as any).validate(yaml);
   }
 }

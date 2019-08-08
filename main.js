@@ -2,13 +2,25 @@ const {app, BrowserWindow} = require('electron')
 const url = require("url");
 const path = require("path");
 const k8s = require("@kubernetes/client-node");
+const util = require('util');
+const cp = require('child_process');
 
-let mainWindow
+let mainWindow;
+
+function validate(yaml){
+  const child = cp.spawnSync('./kubeyaml', {input: yaml});
+  console.log(child.stdout.toString())
+  console.log(child.status)
+  // child.stdout.on('data', (data) => console.log(data));
+  // child.stdin.write(yaml);
+  // child.stdin.end();
+  // child.stderr.on('data', data => console.log(data))
+}
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 800,
     webPreferences: {
       nodeIntegration: true
     }
@@ -36,6 +48,7 @@ function createWindow() {
   mainWindow.config = kc;
   mainWindow.coreV1Api = kc.makeApiClient(k8s.CoreV1Api);
   mainWindow.appsV1Api = kc.makeApiClient(k8s.AppsV1Api);
+  mainWindow.validate = validate;
 }
 
 app.on('ready', createWindow)
