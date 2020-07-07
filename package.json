@@ -28,7 +28,7 @@
     "@materia-ui/ngx-monaco-editor": "^2.0.6",
     "@types/electron": "^1.6.10",
     "@webcomponents/custom-elements": "^1.0.0",
-    "electron": "^6.0.1",
+    "electron": "^7.2.4",
     "kubernetes-client": "^8.3.3",
     "ngx-electron": "^2.1.1",
     "rxjs": "~6.4.0",
